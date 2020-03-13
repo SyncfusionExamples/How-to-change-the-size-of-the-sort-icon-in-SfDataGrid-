@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataGridDemo"
+             xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             x:Class="DataGridDemo.MainPage" >
+
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <sfgrid:SfDataGrid x:Name="dataGrid" AllowTriStateSorting="True"
+                               ItemsSource="{Binding OrdersInfo, Mode=TwoWay}" 
+                               AllowSorting="True"  
+                               AutoGenerateColumns="False" 
+                               ColumnSizer="Star">
+                <sfgrid:SfDataGrid.Columns >
+                    <sfgrid:GridTextColumn MappingName="OrderID" />
+                    <sfgrid:GridTextColumn  MappingName="FirstName" />
+                    <sfgrid:GridTextColumn  MappingName="LastName" />
+                </sfgrid:SfDataGrid.Columns>
+            </sfgrid:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
